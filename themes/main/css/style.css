@@ -1,0 +1,234 @@
+ 
+
+.offset-top-10px{
+	margin-top:10px;
+}
+
+.offset-left-30px{
+ margin-left:30px;
+ }
+
+.offset-left-10px{
+ margin-left:10px;
+ }
+
+.offset-left-5px{
+ margin-left:5px;
+ }
+
+.roles-list-view {
+    padding-top: 20px;
+}
+
+.roles-list-view ul {
+    display:block;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.roles-list-view li {
+    display: block;
+    margin: 0 5px 10px 5px;
+    padding: 0;
+}
+
+.roles-info{
+	color: #999999;
+    display: inline-block;
+    text-shadow: 0 1px 0 #FFFFFF;
+	font-size:0.9em;
+}
+
+#scale {   }
+#scale * { display: inline;   }
+#scale label { padding-right: 10px; }
+
+table.table-ext, table.table-ext td {
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+}
+table.table-ext td { padding-right: 10px; }
+
+#providersContent { width: 700px; margin-left: -350px; top: 5%; }
+
+.modal-body { min-height: 500px; max-height: 700px; }
+.accordion-heading { background-color: #E9E9E9; }
+
+#accordionProviders { min-height: 30px; max-height: 300px; overflow-x: auto; overflow-x: hidden; border: 1px solid #CCC; }
+
+#accordionProviders .cost { color: rgb(0, 136, 204); font-weight: bold; margin-right: 10px; }
+#accordionProviders .date { color: #000; margin-right: 10px; }
+#accordionProviders .name { color: #000; margin-right: 10px; }
+#accordionProviders .comment { color: #666; margin-right: 10px; }
+
+.providersLink a { cursor: pointer; }
+.editable-popup .providersLink {
+	width: 270px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	padding-top: 10px;
+}
+
+#project { padding-top: 50px; }
+
+.tab-content { overflow: hidden; }
+
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+
+legend { margin-bottom: 10px !important; }
+
+.navbar-inverse .navbar-inner {
+  background-color: #5285b8;
+  background-image: -moz-linear-gradient(top, #6699cc, #336699);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6699cc), to(#336699));
+  background-image: -webkit-linear-gradient(top, #6699cc, #336699);
+  background-image: -o-linear-gradient(top, #6699cc, #336699);
+  background-image: linear-gradient(to bottom, #6699cc, #336699);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6699cc', endColorstr='#ff336699', GradientType=0);
+  border-color: #252525;
+}
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+    color: rgb(255, 255, 255);
+    background-color: rgb(51, 102, 153);
+}
+.navbar-inverse .brand {
+    color: rgb(217, 234, 245);
+}
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+    color: rgb(217, 234, 245);
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+}
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: rgb(51, 102, 153);
+    color: rgb(255, 255, 255);
+}
+.navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
+    border-top-color: rgb(217, 234, 245);
+    border-bottom-color: rgb(217, 234, 245);
+}
+.navbar-inverse .nav li.dropdown > a:hover .caret, .navbar-inverse .nav li.dropdown > a:focus .caret {
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+}
+.breadcrumb {
+    background-color: rgb(217, 234, 245);
+}
+.well {
+    background-color: rgb(217, 234, 245);
+}
+.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
+    background-color: rgb(217, 234, 245);
+}
+.navbar-inverse .btn-navbar {
+	background-color: rgb(102, 153, 204);
+    background-image: linear-gradient(to bottom, rgb(102, 153, 204), rgb(51, 102, 153));
+}
+.navbar-inverse .btn-navbar:hover, .navbar-inverse .btn-navbar:focus, .navbar-inverse .btn-navbar:active, .navbar-inverse .btn-navbar.active, .navbar-inverse .btn-navbar.disabled, .navbar-inverse .btn-navbar[disabled] {
+    background-color: rgb(51, 102, 153);
+}
+.navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
+    background-color: rgb(51, 102, 153);
+}
+.dropdown-menu > li > a {
+    color: rgb(51, 51, 51);
+}
+.navbar-inverse .nav-collapse .nav > li > a {
+	color: rgb(217, 234, 245);
+}
+.navbar-inverse .nav-collapse .dropdown-menu a {
+	color: rgb(51, 51, 51);
+}
+
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+    color: rgb(255, 255, 255);
+}
+.navbar-inverse .nav-collapse .dropdown-menu a:hover {
+	color: rgb(255, 255, 255);
+}
+
+h1, h2 { color: #4e7094 !important; }
+h3, h4, h5 { color: #4e6094 !important; line-height: 18px; }
+
+#scroller {
+	position: fixed; bottom: 25px; left: 0.5%; z-index: 2;
+}
+
+#projectNavigator {
+	position: fixed; top: 50px; left: 0.5%; z-index: 3;
+}
+
+.question {
+	margin: 0 0 15px 0;
+}
+
+.mini-radio .radio {
+	display: inline-block; margin-right: 12px;
+}
+.mini-radio .radio label {
+	font-size: 0.9em !important; margin-left: -2px;
+}
+
+.mini-checkbox .checkbox, .mini-checkbox-small .checkbox {
+	display: inline-block; margin-right: 12px;
+}
+.mini-checkbox .checkbox label {
+	font-size: 0.9em !important; margin-left: -2px;
+}
+.mini-checkbox-small .checkbox {
+	font-size: 0.8em !important;
+}
+
+.grid-view { padding-top: 5px; }
+.grid-view.grid-view-loading { opacity: 0.5; }
+.grid-view .items td a:link { color: rgb(0, 125, 205) !important; }
+
+.opacity { opacity: 0.5; }
+
+.floatRight { float: right; }
+
+.width400 { width: 400px; }
+
+.nobr { white-space: nowrap !important; }
+
+.dotted { border-bottom: dotted #CCC 1px; }
+
+
+.container.pr100 {
+	width:auto; margin: 0px 10px 0px 10px;
+}
+
+.container.pr100 .span12 {
+	width:auto; 
+}
+
+i.icon-document { background: url("../images/icons/document.png") no-repeat 0 0; width: 24px; height: 24px; margin: -4px -5px; }
+
+#looking-users-cnt{cursor:pointer;}
+
+
+.noListStyle {
+    list-style: none;
+}
+
+.right {
+    float: right;
+}
+
+
+.vs-chat{}
+.vs-chat .chatList { font-size: 12px; }
+.vs-chat .chatList ul {list-style: none; padding: 0; margin: 0;}
+.vs-chat .chatList p span.date, .vs-chat .chatList p span.name {color:#999999;}
+.vs-chat .chatList p {margin: 0; padding: 0;}
+.vs-chat .chatList ul > li { margin-bottom: 6px;}
+
+.vs-chat .nav.nav-tabs li > a {font-size:13px;}
+.vs-chat .nav.nav-tabs li.new > a {color:red; font-weight: bold; padding-top: 4px;padding-bottom: 4px;line-height: 14px;}
+.nav-tabs>li>a {line-height: 14px;}
