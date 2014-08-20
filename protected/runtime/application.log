@@ -1,0 +1,19 @@
+2014/08/20 23:44:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'wpoli_1753_corp'@'localhost' (using password: YES)' in /var/www/mcrm/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/mcrm/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/mcrm/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/mcrm/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/mcrm/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /var/www/mcrm/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /var/www/mcrm/framework/db/ar/CActiveRecord.php(1428): CActiveRecord->getDbConnection()
+#6 /var/www/mcrm/framework/db/ar/CActiveRecord.php(1484): CActiveRecord->getTableAlias(true)
+#7 /var/www/mcrm/protected/models/Settings.php(56): CActiveRecord->findByPk('postsPerPage')
+#8 /var/www/mcrm/protected/models/Settings.php(43): Settings::loadByName('postsPerPage')
+#9 /var/www/mcrm/protected/components/BaseController.php(29): Settings::value('postsPerPage', 10)
+#10 /var/www/mcrm/framework/web/CWebApplication.php(281): BaseController->init()
+#11 /var/www/mcrm/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /var/www/mcrm/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/mcrm/index.php(18): CApplication->run()
+#14 {main}
+REQUEST_URI=/mcrm/index.php
+---

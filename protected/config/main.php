@@ -49,7 +49,7 @@ return array(
 		),
 		
 		'session' => array (
-			'sessionName' => 'snos_zdaniy',
+			'sessionName' => 'corp-crm',
             'autoStart' => true
 		),
 	
@@ -85,10 +85,10 @@ return array(
 		
 		 
 		'db' => array(
-			'connectionString' => 'mysql:host=localhost;port=3306;dbname=wpoli_1753_corp',
+			'connectionString' => 'mysql:host=localhost;port=3306;dbname=corp',
 			'emulatePrepare' => true,
-			'username' => 'wpoli_1753_corp',
-			'password' => 'GREG54g4',
+			'username' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 			'tablePrefix' => '',
 			'enableParamLogging' => true,
