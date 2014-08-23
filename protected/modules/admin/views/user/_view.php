@@ -1,7 +1,13 @@
 <div class="view">
-
-		 
 	<h3><?php echo CHtml::link(CHtml::encode($data->getFullName()),array('view','id'=>$data->id)); ?></h3>
+<div class="row-fluid">
+
+	<div class="span2">
+<?php echo ($data->fileExists('photo')) ? CHtml::image($data->getSrc('photo'), 'photo', array()) : 'нет фото' ; ?>
+</div>
+<div class="span10">
+		 
+
 	 
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('post_id')); ?>:</b>
@@ -56,5 +62,9 @@
 	<br />
 
 	*/ ?>
+	</div>
+
+
+</div>
         <hr/>
 </div>

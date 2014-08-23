@@ -42,6 +42,7 @@ class User extends CActiveRecord
          */
         public $verifyCode;
         
+        
         /**
          * 
          * @param type $password
@@ -64,6 +65,20 @@ class User extends CActiveRecord
 		));
 		return CHtml::listData($models, 'id', 'FullName', 'FullSubdivision');
 	}
+        
+        /**
+        *
+        * @return array 
+        */
+        public function behaviors() {
+                return array_merge(parent::behaviors(),array(
+                    'fileUploadCActiveRecordBehavior'=>array(
+                        'class'=>'FileUploadCActiveRecordBehavior',
+                        'fileFields'=>array('photo'), 
+                        'extensions'=>array('jpg', 'png','gif','jpeg',),
+                    ),
+                ));
+        }
 
 	/**
 	 * @return string the associated database table name
@@ -107,7 +122,7 @@ class User extends CActiveRecord
 			array('email', 'email', ),
 			array('email,login', 'unique', ),
                         array('actual,is_super_admin', 'boolean', ),
-                        array('dateworkat,dateworkto ', 'safe'),
+                        array('dateworkat,dateworkto,photo', 'safe'),
                     
                         array('passwordComf', 'compare', 'compareAttribute'=>'password','on'=>array('register', 'insert', 'changePass'), 'message'=>'Пароли не совпадают.'),
                         array('verifyCode', 'captcha', 'on'=>'register'),
@@ -219,6 +234,7 @@ class User extends CActiveRecord
 			'is_super_admin' => 'Супер администратор',
                         'dateworkat'=>'Дата приема на работу',
                         'dateworkto'=>'Дата увольнения',
+                        'photo'=>'Фото',
 		);
 	}
 

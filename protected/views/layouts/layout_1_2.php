@@ -27,11 +27,10 @@ $this->beginContent('//layouts/main');
 		<h4>Персонал:</h4>
                 
                 <ul class="nav">
-                <li> <?php echo CHtml::link('Новые сотрудники', array('cmpnewusers')); ?></li>
-               <li> <?php echo CHtml::link('Кто есть в компании', array('whoincomp')); ?></li>
-               <li> <?php echo CHtml::link('Отсутствуют', array('epsenusers')); ?></li>
-               <li> <?php echo CHtml::link('Работа в компании', array('cmpwork')); ?></li>
-               <li> <?php echo CHtml::link('Наши именинники', array('index')); ?></li>
+                <li> <?php echo CHtml::link('Новые сотрудники', array('/site/cmpnewusers')); ?></li>
+               <li> <?php echo CHtml::link('Кто есть в компании', array('/site/whoincomp')); ?></li>
+               <li> <?php echo CHtml::link('Отсутствуют', array('/site/epsenusers')); ?></li> 
+               <li> <?php echo CHtml::link('Наши именинники', array('/site/index')); ?></li>
                                   
                
                     
@@ -39,11 +38,11 @@ $this->beginContent('//layouts/main');
 		<h4>Функционал:</h4>
                 <ul class="nav">
                     <li>
-                <?php echo CHtml::link('Расписание регулярных совещаний', array('scheduleregular')); ?>
+                <?php echo CHtml::link('Расписание регулярных совещаний', array('/site/scheduleregular')); ?>
                     </li>
                
 					<li>
-                <?php echo CHtml::link('Запросить встречу', array('requestappointment')); ?>
+                <?php echo CHtml::link('Запросить встречу', array('/site/requestappointment')); ?>
                     </li>
 					<li>
                 <?php echo CHtml::link('Бронирование переговорной', array('/site/negotiating')); ?>
@@ -54,27 +53,17 @@ $this->beginContent('//layouts/main');
 					<li>
                 <?php echo CHtml::link('Доска объявлений', array('/advert')); ?>
                     </li>
-					<?/*?>
-					<li>
-                <?php echo CHtml::link('Техническая поддержка'); ?>
-                    </li> <?*/?>
+				 
                 </ul> 
 		<h4>Документы:</h4>
 		<ul class="nav">
 		<li>
-                <?php echo CHtml::link('Бланки документов', array('/docs/blanks')); ?>
+                <?php echo CHtml::link('Документы', array('/docs/')); ?>
                     </li>
-		 <li>
+		 <li> 
                 <?php echo CHtml::link('Структура предприятия', array('structure')); ?>
                     </li>
-					<?/*?>
-					<li>
-                <?php echo CHtml::link('процедуры и регламенты', array('')); ?>
-                    </li>
-					<li>
-                <?php echo CHtml::link('База знаний', array('')); ?>
-                    </li>
-					<?*/?>
+					 
 		</ul> 	
 
                 <?php if(!Yii::app()->user->isGuest) {?>

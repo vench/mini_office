@@ -32,6 +32,23 @@
 
           ?>
          <?php echo $form->error($model,'dateevent'); ?>
+   <?php echo $form->labelEx($model,'dateevent2'); ?>
+         <?php 
+                        $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                            'model'=>$model,
+                            'attribute'=>'dateevent2', 
+                            'language'=>'ru',
+                            'defaultOptions'=>array(
+                                'showAnim'=>'fold',
+                                'format'=>'dd.mm.yyyy',
+                            ),
+                            'htmlOptions'=>array(
+                                'class'=>'g-2'
+                            ),
+                        ));
+
+          ?>
+         <?php echo $form->error($model,'dateevent2'); ?>
  
 
 	<?php echo $form->timepickerRow($model,'timestart',array(

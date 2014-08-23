@@ -187,12 +187,7 @@ class SiteController extends BaseController {
 		$this->redirect(Yii::app()->homeUrl);
 	}
 	
-	/**
-	* Работа в компании
-	*/
-	public function actionCmpwork() {
-		$this->render('cmpwork', array());
-	}
+ 
 	
 	/**
 	* Бронирование переговорной

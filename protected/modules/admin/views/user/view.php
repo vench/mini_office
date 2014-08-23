@@ -15,6 +15,11 @@ array('label'=>'Управление пользователями','url'=>array(
 
 <h1>Просмотр пользователя #<?php echo $model->getFullName(); ?></h1>
 
+
+<div class="row-fluid">
+
+
+<div class="span8">
 <?php $this->widget('bootstrap.widgets.TbDetailView',array(
 'data'=>$model,
 'attributes'=>array(
@@ -59,3 +64,10 @@ array('label'=>'Управление пользователями','url'=>array(
                 ), 
 ),
 )); ?>
+
+</div>
+	<div class="span4">
+<?php echo ($model->fileExists('photo')) ? CHtml::image($model->getSrc('photo'), 'photo', array('class'=>'')) : '' ; ?>
+</div>
+
+</div>

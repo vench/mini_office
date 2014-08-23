@@ -50,10 +50,12 @@ return false;
                         'class'=>'span2',
                     ),
                 ),
-		array('name'=>'post_id', 'filter'=>$postsList, 'value'=>'$data->post->name'),
+                array('name'=>'photo', 'value'=>'CHtml::image($data->getSrc("photo"), "нет фото", array("style"=>"width:120px"))', 'type'=>'raw', 'htmlOptions'=>array('style'=>'width:120px')),
+		
+		//array('name'=>'post_id', 'filter'=>$postsList, 'value'=>'$data->post->name'),
 		array('name'=>'subdivision_id', 'filter'=>$subdivisionList, 'value'=>'$data->getFullSubdivision()'),  
 		 array('name'=>'name', 'value'=>'$data->getFullName()'), 
-		'login', 
+		//'login', 
 		array('name'=>'actual', 'filter'=>Utill::getYesNo(), 'value'=>'$data->actual ? "Да" : "Нет"'), 
 		'email',
 		/*

@@ -26,8 +26,18 @@ class DocsController extends BaseController
         );
     }
 	
+        /**
+         * Все документы
+         */
 	public function actionIndex() {
-	
+            $model=new Documents('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['Documents']))
+                 $model->attributes=$_GET['Documents']; 
+		 
+	    $this->render('index', array(
+			'model'=>$model,
+	    ));
 	}
 	
 	/**
@@ -35,7 +45,7 @@ class DocsController extends BaseController
 	*/
 	public function actionBlanks() {	 
 		$model=new Documents('search');
-        $model->unsetAttributes();  // clear any default values
+         $model->unsetAttributes();  // clear any default values
         if(isset($_GET['Documents']))
             $model->attributes=$_GET['Documents']; 
 		$model->type = Documents::TYPE_BLANKS;

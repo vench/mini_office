@@ -246,6 +246,11 @@ class Event extends CActiveRecord
                 $this->dateevent = time();
             }
             $this->dateevent = date('d.m.Y', $this->dateevent);
+            if(is_null($this->dateevent2)) {
+                $this->dateevent2 = time();
+            }
+            $this->dateevent2 = date('d.m.Y', $this->dateevent2);
+            
             return parent::afterFind();
         }
         
@@ -255,6 +260,7 @@ class Event extends CActiveRecord
          */
         protected function beforeSave() { 
             $this->dateevent = strtotime($this->dateevent);
+            $this->dateevent2 = strtotime($this->dateevent2);
             return parent::beforeSave();
         }
 

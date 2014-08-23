@@ -13,8 +13,17 @@
    <ul class="noListStyle">
        <?php
        foreach($model->users as $user) { ?>
-           <li><i class=" icon-user"></i> 
-               <?php echo $user->getFullName();?>: <?php echo isset($user->post) ? $user->post->name : "";?></li>
+           <li>
+		   <div class="row-fluid">
+
+	<div class="span2">
+			  <?php echo ($user->fileExists('photo')) ? CHtml::image($user->getSrc('photo'), 'photo', array()) : 'нет фото' ; ?>
+		   </div>
+<div class="span10">
+		   
+               <?php echo $user->getFullName();?>: <?php echo isset($user->post) ? $user->post->name : "";?>
+			  </div></div> 
+			   </li>
         <?php }       ?>
    </ul>
     <?php }?>

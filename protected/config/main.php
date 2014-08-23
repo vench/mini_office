@@ -11,7 +11,7 @@ return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
 	'homeUrl' => 'http://' . $_SERVER['HTTP_HOST'] . '/',
 	
-    'name' => 'NordSite',
+    'name' => 'My CRM',
 	
 	'preload' => array('log', 'bootstrap'),
 
@@ -19,6 +19,7 @@ return array(
 		'application.models.*',
 		'application.models.forms.*',
 		'application.components.*',
+                'application.behaviors.*',
     ),
 	
 	'modules' => array(

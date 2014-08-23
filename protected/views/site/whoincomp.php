@@ -8,6 +8,9 @@ $this->breadcrumbs = array('Кто есть в компании' );
 'id'=>'user-grid',
 'dataProvider'=>$model->search(), 
 'columns'=>array( 
+		array('name'=>'photo', 'value'=>'CHtml::image($data->getSrc("photo"), "нет фото", array("style"=>"width:120px"))', 'type'=>'raw', 'htmlOptions'=>array('style'=>'width:120px')),
+		
+		
 		array('name'=>'post_id',  'value'=>'$data->getFullSubdivision().": ".$data->post->name'),		 
 		array('name'=>'name', 'value'=>'$data->getFullName()'), 
                 array('name'=>'dateworkat',),

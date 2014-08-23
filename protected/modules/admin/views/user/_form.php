@@ -1,6 +1,7 @@
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'id'=>'user-form',
 	'enableAjaxValidation'=>false,
+        'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
 <p class="help-block">Поля с <span class="required">*</span> обязательные.</p>
@@ -95,6 +96,11 @@
           ?>
          <?php echo $form->error($model,'dateworkto'); ?>
                 
+            
+            	<?php echo $form->fileFieldRow($model,'photo',array('class'=>'')); ?>
+	<?php echo $form->hiddenField($model,'photo');  ?>
+             <?php echo $form->error($model,'photo'); ?>
+	<?php echo ($model->fileExists('photo')) ? CHtml::image($model->getSrc('photo'), 'photo', array()) : '' ; ?>
 
 	<?php echo $form->checkBoxRow($model,'actual',array('class'=>'')); ?>
 

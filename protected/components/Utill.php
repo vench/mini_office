@@ -159,6 +159,23 @@ class Utill {
     public static function timeToMaxMonth($time) {
         return mktime(0,0,0,date('m', $time), date('t', $time), date('Y', $time));
     }
+    
+         /**
+         *
+         * @param int $size
+         * @param string $hash
+         * @return string 
+         */
+    public static function getRandomText($size, $hash = NULL) {
+        if(is_null($hash)) {
+                $hash = join('',range('a', 'b')).join('',range('1', '9'));
+        }
+            $str = '';  
+        while($size -- > 0) { 
+			$str .= substr($hash, mt_rand(1, strlen($hash) -1), 1);			
+	    }
+        return $str;
+    }
 }
 
 ?>

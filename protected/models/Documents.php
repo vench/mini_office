@@ -110,15 +110,23 @@ class Documents extends CActiveRecord
 		return $this->typedata == 1;
 	}
 	
-	/**
-	* Закачка файла
-	*/
-	public function download() {
+	 
+        /**
+         *  Закачка файла
+         * @param type $view
+         */
+	public function download( $view = TRUE) {
 		$filePath = $this->getFullPathFile();
 		$data = pathinfo($filePath);
-		header("Content-disposition: attachment; filename=document.{$data['extension']}");
-        header("Content-type: application/{$data['extension']}");
-        readfile($filePath);
+		
+		if($view && in_array(strtolower($data['extension']), array('jpg', 'jpeg', 'png', 'bmp', 'gif',))) { 
+            header("Content-type: image/{$data['extension']}");
+            echo file_get_contents($filePath);
+        } else {
+			header("Content-disposition: attachment; filename=document.{$data['extension']}");
+			header("Content-type: application/{$data['extension']}");
+			readfile($filePath);
+		}
 	}
 	
 	/**

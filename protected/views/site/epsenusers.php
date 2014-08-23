@@ -11,9 +11,15 @@ $this->breadcrumbs = array('Отсутствуют' );
          ?> <h4><?php echo $model->deviation->name; ?></h4> <?php
          $deviation_id = $model->deviation_id;
      }
-     ?> <p> <?php
+     ?> <p> 
+
+  <?php echo CHtml::image($model->user->getSrc("photo"), "нет фото", array("style"=>"width:120px; margin:0 10px 0 0;float:left;")); ?>
+<?php
      echo $model->user->post->name.', '.$model->user->getFullName() .' -  c '.$model->datestartStr(). ' по '.$model->dateendStr();
      ?>
-     </p> <?php
+     </p> 
+
+	<div style="clear:both;"></div>
+<?php
  }
  ?>
