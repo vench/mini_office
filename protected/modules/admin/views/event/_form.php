@@ -65,8 +65,8 @@
                 'showMeridian' => false // irrelevant
         ))); ?>
 
-	<?php echo $form->checkBoxRow($model,'cyclic',array('class'=>'')); ?>
-<p>Будет повторяться каждую неделю с даты установки</p>
+	<?php /* echo $form->checkBoxRow($model,'cyclic',array('class'=>'')); */ ?>
+ 
 <?php echo $form->checkBoxRow($model,'show_all',array('class'=>'')); ?>
 
 

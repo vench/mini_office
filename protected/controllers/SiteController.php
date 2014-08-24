@@ -117,7 +117,7 @@ class SiteController extends BaseController {
          */
         public function actionScheduleregular() {
             $model = new Event('search');
-            $model->cyclic=1;
+            //$model->cyclic=1;
             $model->type_event_id = 1; //совещания
             
              $this->render('scheduleregular', array(

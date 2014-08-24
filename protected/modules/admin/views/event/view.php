@@ -34,10 +34,7 @@ array('label'=>'Управление событием','url'=>array('admin')),
 		'dateevent',
 		'timestart',
 		'timeend',
-                array(
-                    'name'=>'cyclic',
-                    'value'=> ($model->cyclic == 1) ? "Да" : "Нет",
-                ), 
+               
 		'name',
 		array('name'=>'description', 'type'=>'raw'),
 ),
