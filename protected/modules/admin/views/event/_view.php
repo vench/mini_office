@@ -17,7 +17,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dateevent')); ?>:</b>
-	<?php echo CHtml::encode($data->dateevent); ?>
+	<?php echo CHtml::encode($data->dateeventInfo()); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('timestart')); ?>:</b>

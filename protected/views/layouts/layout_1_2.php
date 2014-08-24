@@ -30,16 +30,14 @@ $this->beginContent('//layouts/main');
                 <li> <?php echo CHtml::link('Новые сотрудники', array('/site/cmpnewusers')); ?></li>
                <li> <?php echo CHtml::link('Кто есть в компании', array('/site/whoincomp')); ?></li>
                <li> <?php echo CHtml::link('Отсутствуют', array('/site/epsenusers')); ?></li> 
-               <li> <?php echo CHtml::link('Наши именинники', array('/site/index')); ?></li>
+               <li> <?php echo CHtml::link('Наши именинники', array('/site/birthday')); ?></li>
                                   
                
                     
                 </ul>    
 		<h4>Функционал:</h4>
                 <ul class="nav">
-                    <li>
-                <?php echo CHtml::link('Расписание регулярных совещаний', array('/site/scheduleregular')); ?>
-                    </li>
+              
                
 					<li>
                 <?php echo CHtml::link('Запросить встречу', array('/site/requestappointment')); ?>
@@ -61,7 +59,7 @@ $this->beginContent('//layouts/main');
                 <?php echo CHtml::link('Документы', array('/docs/')); ?>
                     </li>
 		 <li> 
-                <?php echo CHtml::link('Структура предприятия', array('structure')); ?>
+                <?php echo CHtml::link('Структура предприятия', array('/site/structure')); ?>
                     </li>
 					 
 		</ul> 	

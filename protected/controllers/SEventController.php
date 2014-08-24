@@ -43,8 +43,7 @@ class SEventController extends BaseController {
 
 		$params = array(
                 ':mintime'=>  $start,
-                ':maxtime'=>  $end,
-                ':mintime1'=>  $start, 
+                ':maxtime'=>  $end, 
 				':user_id'=> Yii::app()->user->getId(),
 				':user_id2'=> Yii::app()->user->getId(),
             );
@@ -56,26 +55,17 @@ class SEventController extends BaseController {
         $models = Event::model()->findAll(array(
             'condition'=>
 				'(t.show_all = 1 OR t.user_id = :user_id OR t.id IN (SELECT event_id FROM {{EventInvited}} WHERE user_id = :user_id2) ) AND '.
-				'((t.dateevent >= :mintime AND t.dateevent <= :maxtime) OR (t.cyclic = 1 AND t.dateevent <= :mintime1))' . 
+				'((t.dateevent2 >= :mintime AND t.dateevent <= :maxtime))' . 
 				(!is_null($type_event_id) ? ' AND type_event_id = :type_event_id' : ''),
             'params'=>$params,
             'order'=>'t.timestart',
-            'select'=>'name,id,dateevent,cyclic',   
+            'select'=>'name,id,dateevent,dateevent2',   
             'with'=>array('typeEvent'),
         )); 
         $items = array();
-        foreach($models as $model) {
-           $startEvt = strtotime($model->dateevent);
-           if($model->cyclic == 1) {   
-               $week = 3600 * 24 * 7;
-               $startEvt += ($startEvt < $start) ? (int)(($start - $startEvt) / $week) * $week  : 0;
-               while($startEvt <= $end) { 
-                   $items[]=$this->buildEventItem($model, $startEvt);  
-                   $startEvt += $week;
-               }     
-           } else {
-               $items[]=$this->buildEventItem($model, $startEvt);
-           }   
+        foreach($models as $model) { 
+               $items[]=$this->buildEventItem($model);
+            
         }
         
         echo CJSON::encode($items);
@@ -99,10 +89,11 @@ class SEventController extends BaseController {
      * @param type $time
      * @return type
      */
-     public function buildEventItem(Event $event, $time) {
+     public function buildEventItem(Event $event) {
          return array(
                         'title'=>$event->name, 
-                        'start'=>$time,
+                        'start'=>  strtotime($event->dateevent),
+                        'end'=>strtotime($event->dateevent2),
 						//'allDay'=>true,	
 						//'end'=>date('Y-m-d',$time) ,
                         'color'=>isset($event->typeEvent) ? $event->typeEvent->getSoftColor() : '', 

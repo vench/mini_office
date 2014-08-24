@@ -37,7 +37,7 @@ class Event extends CActiveRecord
          * @return string
          */
         public function dateeventInfo() {
-            return $this->dateevent. (($this->cyclic == 1) ? ': каждый '.Utill::getWeekDayStr(date('w',strtotime($this->dateevent))) : '');
+            return ($this->dateevent == $this->dateevent2) ? $this->dateevent :  $this->dateevent.  ' - ' .$this->dateevent2;
         }
 
 	/**

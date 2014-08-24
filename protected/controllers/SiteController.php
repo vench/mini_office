@@ -56,6 +56,10 @@ class SiteController extends BaseController {
             $this->render('routine'); 
         }  
         
+         public function actionBirthday() {
+            $this->render('birthday'); 
+        }  
+        
         /**
          * 
          */
