@@ -169,7 +169,7 @@ class Instruct extends CActiveRecord
 		$message->is_new = 1;
 		$message->arhive = 0;
 		$message->subject = 'Новое поручение';
-		$message->text = 'Вы получили новое поручение "'.$this->name.'"'.'<br>'.CHtml::link('Просмотреть подробно', $this->createAbsoluteUrl('/instruct', array('from'=>1)));
+		$message->text = 'Вы получили новое поручение "'.$this->name.'"'.'<br>'.CHtml::link('Просмотреть подробно', Yii::app()->createAbsoluteUrl('/instruct', array('from'=>1)));
 		$message->save();
 	}
 	

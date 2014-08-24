@@ -51,7 +51,9 @@ $this->beginContent('//layouts/main');
 					<li>
                 <?php echo CHtml::link('Доска объявлений', array('/advert')); ?>
                     </li>
-				 
+					<li>
+                <?php echo CHtml::link('Поручения', array('/instruct')); ?>
+                    </li>	 
                 </ul> 
 		<h4>Документы:</h4>
 		<ul class="nav">

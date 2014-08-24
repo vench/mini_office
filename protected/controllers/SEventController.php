@@ -68,6 +68,23 @@ class SEventController extends BaseController {
             
         }
         
+        //add instruct
+        $models = Instruct::model()->findAll(array(
+            'condition'=>'(user_id = :user_id OR user_to_id =:user_to_id) AND' .
+            '((t.deadline >= :mintime AND t.datecreate <= :maxtime))'   ,
+            'params'=>array(
+                ':user_to_id'=>Yii::app()->user->getId(),
+                ':user_id'=>Yii::app()->user->getId(),
+                ':mintime'=>  $start,
+                ':maxtime'=>  $end, 
+            ),
+            'select'=>'name,id,deadline,datecreate', 
+        ));
+        foreach($models as $model) { 
+               $items[]=$this->buildInstructItem($model);
+            
+        }
+        
         echo CJSON::encode($items);
         Yii::app()->end();
     }
@@ -85,17 +102,28 @@ class SEventController extends BaseController {
     
     /**
      * 
-     * @param Event $event
-     * @param type $time
-     * @return type
+     * @param Instruct $instruct
+     * @return array
+     */
+    public function buildInstructItem(Instruct $instruct) {
+        return array(
+                'title'=>$instruct->name, 
+                'start'=>  strtotime($instruct->datecreate),
+                'end'=>strtotime($instruct->deadline),
+                'url'=>$this->createUrl('/instruct', array('id'=>$instruct->id))
+        );
+    }
+    
+    /**
+     * 
+     * @param Event $event 
+     * @return array
      */
      public function buildEventItem(Event $event) {
          return array(
                         'title'=>$event->name, 
                         'start'=>  strtotime($event->dateevent),
-                        'end'=>strtotime($event->dateevent2),
-						//'allDay'=>true,	
-						//'end'=>date('Y-m-d',$time) ,
+                        'end'=>strtotime($event->dateevent2), 
                         'color'=>isset($event->typeEvent) ? $event->typeEvent->getSoftColor() : '', 
                         'url'=>$this->createUrl('event', array('id'=>$event->id)),
                     );
