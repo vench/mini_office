@@ -30,7 +30,7 @@ $this->breadcrumbs = array('Регистрация ' );
                                 'format'=>'dd.mm.yyyy',
                             ),
                             'htmlOptions'=>array(
-                                'class'=>'g-2'
+                                'class'=>'span2'
                             ),
                         ));
 
@@ -51,7 +51,15 @@ $this->breadcrumbs = array('Регистрация ' );
 
 	<?php echo $form->dropDownListRow($model,'subdivision_id',CHtml::listData(Subdivision::model()->findAll(), 'id', 'FullName' ),array('class'=>'span5','empty'=>'-------')); ?>
 </fieldset>
-
+<fieldset>
+<?php if(CCaptcha::checkRequirements() && Yii::app()->user->isGuest){ ?>
+    <?php echo CHtml::activeLabelEx($model, 'verifyCode');?>
+    <?php $this->widget('CCaptcha'); ?> <br/>
+    <?php echo CHtml::activeTextField($model, 'verifyCode', array(
+        'class'=>'span4',
+    ));?>
+<?php } ?>
+</fieldset>
 <div class="form-actions">
 	<?php $this->widget('bootstrap.widgets.TbButton', array(
 			'buttonType'=>'submit',

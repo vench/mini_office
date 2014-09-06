@@ -235,7 +235,8 @@ class User extends CActiveRecord
                         'dateworkat'=>'Дата приема на работу',
                         'dateworkto'=>'Дата увольнения',
                         'photo'=>'Фото',
-		);
+                        'verifyCode'=>'Защитный код',
+		); 
 	}
 
 	/**

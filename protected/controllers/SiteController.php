@@ -20,7 +20,21 @@ class SiteController extends BaseController {
                    'users'=>array('?'),
                ),
            );
-       }
+       }  
+       
+       /**
+        * 
+        * @return array
+        */
+       public function actions(){
+        return array(
+            'captcha'=>array(
+                'class'=>'CCaptchaAction',
+            ),
+        );
+    }
+    
+       
     
 	/** 
 	*/
@@ -200,6 +214,25 @@ class SiteController extends BaseController {
 		$this->render('negotiating', array());
 	}
         
-  
+        
+        /**
+         * Регистрация в системе          
+         * @param type $success
+         */
+        public function actionRegister($success = FALSE) {     
+            if($success) {
+                $this->render('registerOk', array(
+                     'model'=>new LoginForm(),
+                ));
+                return;
+            }
+            $model = new User('register');
+            if($this->validateAndSaveModel($model)) {
+                $this->redirect(array('register', 'success'=>1));
+            }
+            $this->render('register', array(
+                'model'=>$model,
+            ));
+        }
 }
-?>
+
