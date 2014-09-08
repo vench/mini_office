@@ -17,7 +17,7 @@
                                 'format'=>'dd.mm.yyyy',
                             ),
                             'htmlOptions'=>array(
-                                'class'=>'g-2'
+                                'class'=>'span2'
                             ),
                         ));
 
@@ -36,7 +36,7 @@ echo $form->labelEx($model, 'advert');
 $this->widget('bootstrap.widgets.TbHtml5Editor', array(
     'model'=>$model,
     'attribute'=>'advert',
-    'lang'=>'ru',
+    'lang'=>'ru', 
     
 ));
 ?>

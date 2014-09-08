@@ -31,7 +31,7 @@ echo $form->dropDownListRow($model,'user_to_id', $data, array('class'=>'span5', 
                                 'format'=>'dd.mm.yyyy',
                             ),
                             'htmlOptions'=>array(
-                                'class'=>'g-2'
+                                'class'=>'span2'
                             ),
                         ));
 

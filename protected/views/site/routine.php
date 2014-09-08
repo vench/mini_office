@@ -13,11 +13,14 @@ $this->breadcrumbs = array('Распорядок дня' );
                              <div class="span6">
                        <h4>Общий распорядок дня</h4> 
                     <ul class="nav">
-                        <li><b>9:10</b> - Развоз от м. Академическая</li>
-                        <li><b>9:30</b> - Начало рабочего дня</li>
-                        <li><b>12:00 - 16:00</b> - Обед 30 минут</li>
-                        <li><b>18:00</b> - Конец рабочего дня</li>
-                        <li><b>18:10</b> - Развоз до м. Академическая</li>
+                        <?php foreach($routines as $routine) {?> 
+                           <li>
+                               <b><?php echo $routine->getTimeView()?></b> 
+                                   : <?php echo $routine->name?> 
+                                  <small> <?php echo $routine->description?> </small>
+                           </li> 
+                        <?php }?>
+                         
                     </ul>
                             </div>
                              <div class="span6">                                  

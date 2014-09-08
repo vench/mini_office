@@ -17,6 +17,15 @@
  */
 class Routine extends CActiveRecord
 {
+        /**
+         * Период времени одной строкой
+         * @return string
+         */
+        public function getTimeView() {
+           return   $this->starttime == $this->endtime ?
+                   $this->endtime : $this->starttime .' - '. $this->endtime;
+        }
+    
 	/**
 	 * @return string the associated database table name
 	 */

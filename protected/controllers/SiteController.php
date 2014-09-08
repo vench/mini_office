@@ -49,27 +49,23 @@ class SiteController extends BaseController {
             $this->render('eventNow');            
         }
         
-        /**
-         * События завтра
-         */
-        public function actionEventTomorow() {
-            $this->render('eventTomorow'); 
-        }
-        
-         /**
-         * Важные объявления
-         */
-        public function actionAnnouncements() {
-            $this->render('announcements'); 
-        } 
-        
+     
+   
          /**
          * Распорядок дня
          */
         public function actionRoutine() {
-            $this->render('routine'); 
+            $routines = Routine::model()->findAll(array(
+                'condition'=>'for_all = 1',
+            ));
+            $this->render('routine', array(
+                'routines'=>$routines,
+            )); 
         }  
         
+        /**
+         * 
+         */
          public function actionBirthday() {
             $this->render('birthday'); 
         }  

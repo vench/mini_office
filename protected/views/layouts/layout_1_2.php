@@ -14,10 +14,8 @@ $this->beginContent('//layouts/main');
 			 <ul class="nav">
                                 <li> <?php echo CHtml::link('Календарь событий', array('/site/index')); ?></li>
                                         
-                                <li> <?php echo CHtml::link('События сегодня', array('/site/eventNow')); ?></li>
-                                <li> <?php echo CHtml::link('События завтра', array('/site/eventTomorow')); ?></li>
-                                  
-                                <li> <?php echo CHtml::link('Выжные объявления', array('/site/announcements')); ?></li>
+                                <li> <?php echo CHtml::link('События сегодня', array('/site/eventNow')); ?></li> 
+                                   
                                   
                                 <li> <?php echo CHtml::link('Распорядок дня', array('/site/routine')); ?></li>
                                   
@@ -51,9 +49,7 @@ $this->beginContent('//layouts/main');
 					<li>
                 <?php echo CHtml::link('Доска объявлений', array('/advert')); ?>
                     </li>
-					<li>
-                <?php echo CHtml::link('Поручения', array('/instruct')); ?>
-                    </li>	 
+			 	 
                 </ul> 
 		<h4>Документы:</h4>
 		<ul class="nav">
