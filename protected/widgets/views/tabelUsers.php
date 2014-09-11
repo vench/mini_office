@@ -62,13 +62,13 @@ foreach($models as $model) {
         $deviation = $model->getUserWorkDeviationByDate(mktime(0,0,0, date('m', $time), $i, date('Y', $time)));
       
         ?></td>
-        <td <?php if(!is_null($deviation)) :?> title="<?php echo $deviation->deviation->name?>" style="background: <?php echo $deviation->deviation->getSoftColor();?>" <?endif;?>>
+        <td <?php if(!is_null($deviation)) :?> title="<?php echo $deviation->deviation->name?>" style="background: <?php echo $deviation->deviation->getSoftColor();?>" <?php endif; ?>>
             <?php if(!is_null($deviation)) : echo $deviation->deviation->charcode; endif; ?>
-            <?php
+        <?php
     }
     
     
-    ?></td></tr><?php
+    ?> </td></tr><?php
 }
 
 ?>

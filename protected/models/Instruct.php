@@ -12,6 +12,7 @@
  * @property string $name
  * @property string $description
  * @property integer $deadline
+ * @property integer $event_id
  *
  * The followings are the available model relations:
  * @property User $userTo
@@ -43,7 +44,7 @@ class Instruct extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'Instruct';
+		return '{{Instruct}}';
 	}
 	
 	/**
@@ -87,11 +88,11 @@ class Instruct extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_id, user_to_id, datecreate,deadline, name, description', 'required'),
-			array('user_id, user_to_id, datecreate, status', 'numerical', 'integerOnly'=>true),
+			array('user_id, user_to_id, datecreate, status,event_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, user_to_id, datecreate, status, name, description', 'safe', 'on'=>'search'),
+			array('id, user_id, user_to_id, datecreate, event_id,status, name, description', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -105,6 +106,7 @@ class Instruct extends CActiveRecord
 		return array(
 			'userTo' => array(self::BELONGS_TO, 'User', 'user_to_id'),
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+                        'event' => array(self::BELONGS_TO, 'Event', 'event_id'),
 		);
 	}
 
@@ -122,6 +124,7 @@ class Instruct extends CActiveRecord
 			'name' => 'Название',
 			'description' => 'Описание',
 			'deadline'=>'Крайний срок',
+                        'event_id'=>'Привязка к событию',
 		);
 	}
 
@@ -182,6 +185,7 @@ class Instruct extends CActiveRecord
                $this->status = self::STATUS_START;
             }
             $this->deadline = strtotime($this->deadline); 
+            $this->datecreate = is_numeric($this->datecreate) ? $this->datecreate : strtotime($this->datecreate);
             return parent::beforeSave();
     }
 	
@@ -194,7 +198,7 @@ class Instruct extends CActiveRecord
                 $this->deadline = time();
             }
             $this->deadline = date('d.m.Y', $this->deadline); 
-			$this->datecreate = date('d.m.Y', $this->datecreate);
+	    $this->datecreate = date('d.m.Y', $this->datecreate);
 			
             return parent::afterFind();
     }

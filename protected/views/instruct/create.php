@@ -19,6 +19,16 @@
 $data = User::getListTree(); 
 echo $form->dropDownListRow($model,'user_to_id', $data, array('class'=>'span5', 'empty'=>'--исполнитель--')); ?>
 
+<?php 
+$meEvents = Event::model()->findAll(array(
+    'condition'=>'user_id = :user_id',
+    'select'=>'id,name',
+    'params'=>array(
+        ':user_id'=>Yii::app()->user->getId(),
+    ),
+));
+echo $form->dropDownListRow($model,'event_id', CHtml::listData($meEvents, 'id', 'name'), array('class'=>'span5', 'empty'=>'--событие--')); ?>
+
             <!-- -->
          <?php echo $form->labelEx($model,'deadline'); ?>
          <?php 

@@ -1,7 +1,10 @@
 <div class="alert">
-  <h3><?php echo $data->name; ?>: <?php echo $data->getStatusText();?></h3>
+  <h3><?php echo $data->name; ?>: <small><?php echo $data->getStatusText();?></small></h3>
   <p>Крайний срок: <?php echo $data->deadline; ?>; Дата создания: <?php echo $data->datecreate; ?></p> 
   <p>Исполнитль: <?php echo $data->userTo->getFullName(); ?></p> 
+  <?php if($data->event_id > 0 && isset($data->event)) { ?>
+  <p>Событие: <?php echo CHtml::link($data->event->name, array('/sEvent/event', 'id'=>$data->event_id)); ?></p>
+  <?php }?>
   
   <?php if($from == 1) {?>
   <div>Сменить статус:  <?php 
@@ -27,7 +30,7 @@
   	?> <div class="btn-group"> <?php
 	foreach($list as $key=>$value) {
 		echo CHtml::link($value, array('changeStatusFrom', 'id'=>$data->id, 'status'=>$key, ), array(
-			'class'=>'btn btn-mini',
+			'class'=>'btn btn-mini' .($key == $data->status ? ' disabled' : ''),
 		));
 	} 
 	?> </div> <?php

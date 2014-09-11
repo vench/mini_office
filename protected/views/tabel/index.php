@@ -5,10 +5,10 @@ $this->breadcrumbs = array('Табель посещений' );
 <h1>Табель посещений <small> позволяет просмаатривать где находиться сотрудник.</small></h1>
 
 
-<?php
+<?php 
 $this->widget('application.widgets.TabelUsers', array(
     'time'=>$time,
     'models'=>$models,
-));
+));  
 
-?>
+ 
