@@ -69,7 +69,8 @@ class Event extends CActiveRecord
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 			'place' => array(self::BELONGS_TO, 'Place', 'place_id'),
 			'typeEvent' => array(self::BELONGS_TO, 'EventType', 'type_event_id'),
-			'users' => array(self::MANY_MANY, 'User', 'EventInvited(event_id, user_id)'),
+			'users' => array(self::MANY_MANY, 'User', 'EventInvited(event_id, user_id)'),                    
+                        'instruct'=>array(self::HAS_MANY, 'Instruct', 'event_id'),
 		);
 	} 
 	

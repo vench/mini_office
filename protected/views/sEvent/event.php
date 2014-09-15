@@ -61,3 +61,16 @@ $this->breadcrumbs=array(
         ?>
          </div>
 <?php } ?>
+
+<?php if(sizeof($model->instruct)) { ?>
+         <h4>Задания</h4>
+         <ul>
+    <?php foreach($model->instruct as $instruct){?> 
+        <li> <?php echo $instruct->name; ?>: 
+        <?php echo $instruct->getStatusText(); ?> 
+        
+        </li>
+     
+    <?php } ?>
+             </ul>
+<?php } ?>
